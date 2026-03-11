@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PandaSMP</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #111827, #1f2937);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 100px auto;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #d1d5db;
+    }
+
+    .ip-box {
+      margin: 30px 0;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 14px;
+      font-size: 24px;
+      font-weight: bold;
+      word-break: break-word;
+    }
+
+    button {
+      background: #22c55e;
+      color: #06210f;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    .rules {
+      margin-top: 35px;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    .rules h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PandaSMP</h1>
+    <p>Join the Minecraft server below</p>
+
+    <div class="ip-box" id="serverIP">187.124.94.158:25565</div>
+
+    <button onclick="copyIP()">Copy Server IP</button>
+
+    <div class="rules">
+      <h2>Server Info</h2>
+      <p><strong>Java IP:</strong> 187.124.94.158:25565</p>
+      <p><strong>Status:</strong> Online setup in progress</p>
+      <p><strong>Version:</strong> Minecraft Java Server</p>
+    </div>
+
+    <div class="footer">
+      Made for PandaSMP
+    </div>
+  </div>
+
+  <script>
+    function copyIP() {
+      const ip = "187.124.94.158:25565";
+      navigator.clipboard.writeText(ip).then(() => {
+        alert("Copied: " + ip);
+      });
+    }
+  </script>
+</body>
+</html>
