@@ -1,112 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>PandaSMP</title>
-<style>
 
+<style>
 body{
 margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
+background:black;
 }
-
-header{
-padding:30px;
-font-size:45px;
-font-weight:bold;
-}
-
-.serverbox{
-background:#1f2937;
-margin:20px auto;
-padding:25px;
-width:400px;
-border-radius:15px;
-}
-
-button{
-padding:12px 20px;
-font-size:18px;
-border:none;
-border-radius:10px;
-background:#22c55e;
-cursor:pointer;
-margin:10px;
-}
-
-button:hover{
-background:#16a34a;
-}
-
 iframe{
-margin-top:30px;
-width:90%;
-height:700px;
+width:100vw;
+height:100vh;
 border:none;
-border-radius:15px;
 }
-
-.status{
-font-size:20px;
-margin-top:10px;
-}
-
 </style>
+
 </head>
 
 <body>
 
-<header>PandaSMP</header>
-
-<div class="serverbox">
-
-<h2>Minecraft Server</h2>
-
-<p>Java IP:</p>
-<h3>187.124.94.158:25565</h3>
-
-<p>Browser Address:</p>
-<h3>ws://187.124.94.158:8081</h3>
-
-<button onclick="copyIP()">Copy Java IP</button>
-
-<div class="status" id="status">Checking server...</div>
-
-</div>
-
-<iframe src="https://piesmpclient.vercel.app/"></iframe>
-
-<script>
-
-function copyIP(){
-navigator.clipboard.writeText("187.124.94.158:25565");
-alert("Server IP copied!");
-}
-
-async function checkServer(){
-try{
-let r = await fetch("https://api.mcsrvstat.us/3/187.124.94.158");
-let d = await r.json();
-
-if(d.online){
-document.getElementById("status").innerHTML =
-"🟢 Online • Players: " + d.players.online + "/" + d.players.max;
-}else{
-document.getElementById("status").innerHTML =
-"🔴 Server Offline";
-}
-}catch{
-document.getElementById("status").innerHTML =
-"⚠️ Status check failed";
-}
-}
-
-checkServer();
-setInterval(checkServer,30000);
-
-</script>
+<iframe
+src="https://piesmpclient.vercel.app/?serverName=PandaSMP&serverAddress=ws://187.124.94.158:8081"
+allowfullscreen>
+</iframe>
 
 </body>
 </html>
